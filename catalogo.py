@@ -31,7 +31,7 @@ PROCESOS={
  'fuente':None,'localizador':'Secuencia operativa propuesta por Coordinación; pendiente de contraste con la guía y el formato específico',
  'links':[('Carpeta base normativa',BASE)]},
 'Prácticas de laboratorio':{
- 'pasos':['Declarar las prácticas en el sílabo y la planificación académica de la asignatura.','Preparar y obtener la legalización de la guía de prácticas de laboratorio antes de ejecutar las actividades.','Ejecutar las prácticas con los controles de seguridad, registros y evidencias correspondientes.','Al finalizar, preparar el reporte de seguimiento de ejecución y remitirlo al Coordinador de Carrera.','La Coordinación revisará los reportes docentes y elaborará el consolidado de la carrera.'],
+ 'pasos':['Declarar las prácticas en el sílabo y la planificación académica de la asignatura.','Preparar y obtener la legalización de la guía de prácticas de laboratorio antes de ejecutar las actividades.','Ejecutar las prácticas con los controles de seguridad, registros y evidencias correspondientes.','Al finalizar, realizar el reporte de seguimiento de las prácticas de laboratorio y enviarlo vía Quipux a la Coordinación de Carrera.','La Coordinación revisará los reportes docentes y elaborará el consolidado de la carrera.'],
  'fuente':None,'localizador':'Secuencia de trabajo suministrada por Coordinación; pendiente de validar artículos y formato exacto vigente',
  'links':[('Seguimiento 2026-1S','https://drive.google.com/file/d/1ib9qPw8hvVcRlWIJ0g74HmvQl50gpFwJ/view'),('Designación guías 2026-2S','https://drive.google.com/file/d/18BwlIbW-QzrOGxnBCFvpNKfOMZu0EWIJ/view')]}
 }
