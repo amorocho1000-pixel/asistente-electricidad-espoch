@@ -125,10 +125,15 @@ with t2:
 
     st.write('El numeral 6.1 requiere cooperación, planificación académica aprobada por Comisión de Carrera, declaración en sílabo y planificación de asignatura, evidencias de ejecución y evaluación.')
    else:
-    enlaces(PROCESOS[proc]['links'])
-    st.markdown('#### Designación de guías de laboratorio — 2026-2S')
-    st.markdown(f'[Consultar documento de designación]({GUIAS_LABORATORIO})')
-    st.write(EXPLICACIONES['laboratorio'])
+    st.markdown('#### Formatos de prácticas de laboratorio')
+    st.write('Consulte y descargue los formatos institucionales para declarar las prácticas formativas y documentar su seguimiento. Los enlaces conservan los archivos originales de la Carrera.')
+    enlaces([
+     ('Declaración de prácticas formativas de Electricidad 2026 — formato editable (Excel)', 'https://docs.google.com/spreadsheets/d/1BU-9lc-33kNAPcl8AzFRP1KwSsZi90fk/edit'),
+     ('Declaración de prácticas formativas de Electricidad 2026 — documento PDF', 'https://drive.google.com/file/d/1_UhtnMSMfSS7zc8AXL4F_logEPVI5eVW/view'),
+     ('Formato de seguimiento de prácticas de laboratorio (Word)', 'https://docs.google.com/document/d/1rr06IWfUa_wDHKhzoieZM0yxmAcnlhZM/edit'),
+    ])
+    st.markdown('#### Procedimiento académico')
+    st.markdown('1. Registrar las prácticas en el sílabo y en la planificación académica de la asignatura.\n2. Preparar la guía de laboratorio y obtener su legalización antes de ejecutar las actividades.\n3. Ejecutar las prácticas y conservar las evidencias de realización, conforme a las condiciones de seguridad aplicables.\n4. Elaborar el seguimiento de las prácticas realizadas en el formato institucional y remitirlo a la Coordinación de Carrera.\n5. La Coordinación consolida la información de las asignaturas de la Carrera.')
 with t3:
  st.header('Consultas sobre reglamentos y procedimientos')
  st.markdown('### Biblioteca normativa y documentos oficiales')
