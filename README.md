@@ -22,3 +22,6 @@ Los enlaces a documentos se abren en el repositorio institucional, conforme a su
 
 
 Actualización V1.1: en Docentes > Procesos del docente > Estrategias metodológicas innovadoras se incluyen Carta de invitación, Anexo 1 Planificación y Anexo 2 Informe final (enlaces a las plantillas de la Carrera).
+
+
+Actualización V1.2: enlaces individuales a los cinco formatos de PROCESO_GIRAS y a las guías y reglamento; para desplegar sobre V1.1 solo actualizar app.py en GitHub.

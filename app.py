@@ -93,7 +93,22 @@ with t2:
     with st.expander(a,expanded=True):st.markdown(b)
    st.subheader('Expediente de transporte institucional')
    for x in REQUISITOS_BUS:st.markdown('• '+x)
-   enlaces([('Guía de giras y Anexos B, C y D',NORMAS['giras'][1]),('Reglamento de Uso de Vehículos y Anexos 3–5',NORMAS['vehiculos'][1]),('Plantilla de Quipux de solicitud de transporte','https://docs.google.com/document/d/1jsucwLkcVnrliispbj7m-Y-FYyP6Jhkp/edit')])
+   st.subheader('Formatos para planificación, ejecución e informe de giras')
+   st.write('Seleccione el documento correspondiente. Los archivos se abren desde el repositorio institucional y pueden descargarse si dispone de los permisos necesarios.')
+   enlaces([
+    ('Anexo B — Planificación de gira o visita de campo', 'https://docs.google.com/document/d/1r-kd8EnDo4nJshxjLsFeORvanspuuI-c/edit'),
+    ('Anexo C — Compromiso estudiantil', 'https://docs.google.com/document/d/1rbowcFpdG8yE4oF9za4FM4_KNoSvQVzY/edit'),
+    ('Anexo D — Informe de gira o visita de campo', 'https://docs.google.com/document/d/13OsqLI3_olN-gu2ok4N_WRIRxdm4RGgp/edit'),
+    ('Carta de compromiso del docente', 'https://docs.google.com/document/d/1NUKi3shWKVfDsIaeI6P6_ZxjyKDI8qK7/edit'),
+    ('Plantilla Quipux — Solicitud de transporte institucional', 'https://docs.google.com/document/d/1jsucwLkcVnrliispbj7m-Y-FYyP6Jhkp/edit'),
+   ])
+   st.markdown('#### Normativa y documentación de referencia')
+   enlaces([
+    ('Guía institucional de giras de observación y visitas de campo', NORMAS['giras'][1]),
+    ('Guías Académicas Institucionales — codificación, Resolución 337.CP.2026', 'https://drive.google.com/file/d/1REzt4QiJcUtY0Qb8sOhCBXYxBRraqg1S/view'),
+    ('Reglamento para el Uso de Vehículos de la ESPOCH — Resolución 666.CP.2024', NORMAS['vehiculos'][1]),
+    ('Ver carpeta de formatos de giras', 'https://drive.google.com/drive/folders/1OgIPfOXULX-EDRScjtzr4jYg6dBgbm2x'),
+   ])
    st.warning('Los formularios de giras y transporte incluyen información personal, incluso datos de salud en Anexo C. No se recaban en este aplicativo público.')
   else:
    for i,s in enumerate(PROCESOS[proc]['pasos'],1):st.markdown(f'{i}. {s}')
