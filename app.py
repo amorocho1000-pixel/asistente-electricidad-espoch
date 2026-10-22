@@ -99,7 +99,15 @@ with t2:
    for i,s in enumerate(PROCESOS[proc]['pasos'],1):st.markdown(f'{i}. {s}')
    if proc=='Estrategias metodológicas innovadoras':
     met=st.selectbox('Metodología',list(METODOLOGIAS));loc,desc=METODOLOGIAS[met];st.markdown(desc);st.write('Resolución 064.CP.2025, numeral '+loc)
-    enlaces([('Métodos y Estrategias Didácticas — resolución y anexos',METODOS_URL)])
+    st.markdown('#### Formatos institucionales para la estrategia didáctica')
+    st.write('Utilice los documentos correspondientes a la cooperación, planificación previa y cierre de la actividad.')
+    enlaces([
+     ('Carta de invitación — coordinación con la institución o experto participante', 'https://docs.google.com/document/d/1ODbF-KEg58CcHL2BXsXDgKUkytf8xsHR/edit'),
+     ('Anexo 1 — Planificación de la estrategia didáctica', 'https://docs.google.com/document/d/1p0iZH79u02dcPcey-nXohtkY0gTPg8jE/edit'),
+     ('Anexo 2 — Informe final de ejecución', 'https://docs.google.com/document/d/1TB8IvbmByTCLU3_qn5VlS328NF0ArV8-/edit'),
+    ])
+    st.markdown('**Fuente normativa:** [Métodos y Estrategias Didácticas — Resolución 064.CP.2025, numerales 6.1–6.6 y anexos]('+METODOS_URL+').')
+
     st.write('El numeral 6.1 requiere cooperación, planificación académica aprobada por Comisión de Carrera, declaración en sílabo y planificación de asignatura, evidencias de ejecución y evaluación.')
    else:
     enlaces(PROCESOS[proc]['links'])

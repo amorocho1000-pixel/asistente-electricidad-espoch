@@ -19,3 +19,6 @@ cd /d C:\Electricidad\asistente_electricidad_python
 ```
 
 Los enlaces a documentos se abren en el repositorio institucional, conforme a sus permisos. No se transmiten solicitudes ni se almacenan datos personales en este módulo.
+
+
+Actualización V1.1: en Docentes > Procesos del docente > Estrategias metodológicas innovadoras se incluyen Carta de invitación, Anexo 1 Planificación y Anexo 2 Informe final (enlaces a las plantillas de la Carrera).
