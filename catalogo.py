@@ -93,7 +93,7 @@ TAREAS_CC=[
 ('A12','Internacionalización y movilidad docente','Docentes / R5','Resoluciones, planificaciones, informes, socialización y demás respaldos de movilidad docente sirven como evidencias; registrar la información en la matriz para el consolidado de Carrera.','Informe movilidad, becas y redes'),
 ('A13','Inducción de estudiantes de Nivelación y PAO1','Docente tutor de PAO1 (con apoyo de responsables de Nivelación)','Inducción dirigida a estudiantes de Nivelación y PAO1, realizada con el docente tutor de PAO1.','Inducción Nivelación y PAO1 (2026-2S)'),
 ('E10','Informe de gestión semestral','R1','Informe de gestión semestral','Informe semestral de gestión de Carrera'),
-('E11','Seguimiento del sílabo','R2 / R3 entregan; R1 consolida','Reporte por unidad e informe de carrera','Reporte de seguimiento de sílabo'),
+('E11','Seguimiento del sílabo','R2 / R3 entregan; R1 consolida','Reporte por unidad e informe consolidado de la carrera','Informe consolidado seguimiento de sílabo'),
 ('R1-F01','Informe consolidado de tutorías','R1','Consolidado de tutorías PAO','Informe consolidado de tutorías'),
 ('R1-F02','Control de instrumentos académicos','R1','Verificación de instrumentos académicos','Formato control instrumentos académicos'),
 ('R1-F03','Permanencia y deserción estudiantil','R1','Reporte de permanencia y deserción','Reporte de permanencia y deserción'),

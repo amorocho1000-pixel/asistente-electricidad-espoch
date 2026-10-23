@@ -1,5 +1,6 @@
 import streamlit as st
 import unicodedata
+import re
 from catalogo import C, PROCESOS, FORMATOS_CC, TAREAS_CC, ROLES_CC, METODOLOGIAS, PLANIFICACION_CC_URL, METODOS_URL
 from adicional import NORMAS, GIRAS, REQUISITOS_BUS, ESTUDIANTES, RESPUESTAS
 from nuevos_formatos import SOLICITUDES, AYUDANTIA, PRACTICAS, GUIAS_LABORATORIO, EXPLICACIONES
@@ -9,8 +10,24 @@ from documentos_periodo import CRONOGRAMA_TITULACION, PLANIFICACION_2026_PDF
 def clean(t):
     return ''.join(x for x in unicodedata.normalize('NFKD', t.lower()) if not unicodedata.combining(x))
 
+def ficha_documento(nombre, url, detalle=''):
+    """Presenta documentos enlazados con acceso a descarga y al original.
+
+    La descarga depende de los permisos establecidos por el propietario en Drive.
+    """
+    st.markdown(f'**{nombre}**')
+    if detalle:
+        st.caption(detalle)
+    m = re.search(r'/(?:document|spreadsheets|presentation|file)/d/([A-Za-z0-9_-]+)', url)
+    if m:
+        descarga = f'https://drive.google.com/uc?export=download&id={m.group(1)}'
+        st.markdown(f'[Descargar]({descarga})　 [Ver original]({url})')
+    else:
+        st.markdown(f'[Ver original]({url})')
+
 def enlaces(items):
-    for nombre,url in items: st.markdown(f'• [{nombre}]({url})')
+    for nombre,url in items:
+        ficha_documento(nombre, url)
 
 st.set_page_config(page_title='Electricidad | Asistente académico',page_icon='⚡',layout='wide')
 st.markdown('''<style>
@@ -54,7 +71,7 @@ with t1:
  elif categoria=='Titulación':
   st.subheader('Titulación')
   st.markdown('#### Cronograma vigente de titulación PAO8–PAO9 · 2026-2S')
-  st.link_button('Abrir cronograma PAO8–PAO9 (PDF)',CRONOGRAMA_TITULACION,use_container_width=True)
+  ficha_documento('Cronograma de Titulación PAO8–PAO9 · 2026-2S (PDF)',CRONOGRAMA_TITULACION)
   enlaces(ESTUDIANTES['Titulación'])
   st.markdown('#### Solicitudes correspondientes al proceso')
   enlaces([(n,u) for n,u in SOLICITUDES if any(k in n for k in ['Titulacion','Sustentacion','Complexivo','Medios_Tecnologicos'])])
@@ -70,19 +87,19 @@ with t2:
  st.header('Gestión académica docente')
  modulo=st.radio('Apartado',['Comisiones académicas','Procesos del docente'],horizontal=True)
  if modulo=='Comisiones académicas':
-  com=st.selectbox('Comisión',list(C));enlaces(C[com])
+  com=st.selectbox('Comisión',list(C));enlaces([(n,u) for n,u in C[com] if not (com=='Comisión de Carrera' and n=='Acta de Comisión de Carrera')])
   if com=='Comisión de Titulación':
-   st.link_button('Cronograma de Titulación PAO8–PAO9 · 2026-2S (PDF)',CRONOGRAMA_TITULACION,use_container_width=True)
+   ficha_documento('Cronograma de Titulación PAO8–PAO9 · 2026-2S (PDF)',CRONOGRAMA_TITULACION)
   if com=='Comisión de Carrera':
    st.subheader('Evidencias de la planificación por responsable')
-   st.link_button('Planificación académica y de gestión 2026-2S (PDF)',PLANIFICACION_2026_PDF,use_container_width=True)
+   ficha_documento('Planificación académica y de gestión 2026-2S (PDF)', PLANIFICACION_2026_PDF)
    st.markdown(f'[Planificación articulada — documento de trabajo]({PLANIFICACION_CC_URL})')
    rol=st.selectbox('Responsable',list(ROLES_CC));cod=ROLES_CC[rol]
    found=[t for t in TAREAS_CC if not cod or cod.lower() in t[2].lower()]
    for codigo,titulo,responsable,evidencia,formato in found:
     with st.expander(f'{codigo} — {titulo} | {responsable}'):
      st.write('Evidencia mínima: '+evidencia)
-     if formato and formato in FORMATOS_CC:st.markdown(f'[Abrir formato: {formato}]({FORMATOS_CC[formato]})')
+     if formato and formato in FORMATOS_CC:ficha_documento(formato, FORMATOS_CC[formato])
      elif codigo=='A11':st.info('La CEACC elabora el informe y lo remite al Subdecanato para envío a la DEAC con el formato institucional.')
      else:st.caption('Consultar la planificación y los respaldos que correspondan a esta actividad.')
    st.caption('La planificación distingue evidencias programadas de entregas y aprobaciones efectivas.')
@@ -152,7 +169,11 @@ with t3:
     st.markdown('**Aplica a:** '+ambito)
     st.markdown('**Destino:** '+destino)
     st.markdown(f'**Sustento:** [{norma}]({fuente})')
-    if formato:st.link_button('Consultar plantilla o documento relacionado',formato)
+    if nombre=='Obligaciones de resultados de sostenibilidad':
+     st.markdown('**Numeral 9:** la asignatura institucional de Sostenibilidad Ambiental debe integrar actividades prácticas acordes con el campo de formación de cada carrera, atendiendo al marco jurídico, la seguridad, la salud y los contextos culturales.')
+     st.markdown('**Numeral 9.1:** se promoverán acciones individuales o conjuntas en la carrera, facultad o institución, orientadas a desarrollar competencias y sostenibilidad con buenas prácticas.')
+     st.markdown('**Numeral 9.2:** cuando las actividades estén vinculadas a proyectos de investigación o vinculación aprobados por Consejo Politécnico, el personal académico debe reportar avances y resultados al DDA cada dos períodos académicos, acreditando expresamente la participación estudiantil.')
+    if formato:ficha_documento('Plantilla o documento relacionado',formato)
   st.caption('Las evidencias deben reflejar actividades efectivamente realizadas, no entregas presuntas.')
  st.divider()
  st.markdown('### Realizar una consulta normativa')
@@ -185,7 +206,7 @@ with t4:
  st.subheader('Política institucional de la ESPOCH')
  st.markdown('**Políticas para el tratamiento de datos personales en los sistemas informáticos de la Escuela Superior Politécnica de Chimborazo**')
  st.write('La política institucional establece, entre otros aspectos, los principios de tratamiento (artículo 4), las responsabilidades (artículo 6), la confidencialidad (artículo 7) y la información que debe proporcionarse antes de recopilar datos (artículo 11).')
- st.link_button('Leer política de datos personales de la ESPOCH', 'https://drive.google.com/file/d/19QAvXRGx3ULXPa2k1ZEX4NavQEdqSSg9/view', use_container_width=True)
+ ficha_documento('Política de datos personales de la ESPOCH', 'https://drive.google.com/file/d/19QAvXRGx3ULXPa2k1ZEX4NavQEdqSSg9/view')
  st.subheader('Legislación ecuatoriana')
  st.markdown('**Ley Orgánica de Protección de Datos Personales (LOPDP)**')
  st.write('Publicada en el Quinto Suplemento del Registro Oficial N.º 459, de 26 de mayo de 2021. Reconoce principios, derechos y obligaciones relativos al tratamiento de datos personales.')
