@@ -8,8 +8,8 @@ NORMAS={
 }
 GIRAS=[
  ('1. Declaración curricular','El docente registra la gira o visita en el sílabo y la planificación académica de la asignatura, vinculándola con el resultado de aprendizaje.'),
- ('2. Ingreso por Quipux a Coordinación','El docente remite a Coordinación la planificación **Anexo B**, el compromiso estudiantil **Anexo C** y la carta de solicitud, aceptación o invitación de la empresa. La guía fija **21 días término posteriores al inicio del PAO** como fecha tope de presentación de la planificación; no debe confundirse con 20 días calendario.'),
- ('3. Comisión de Carrera','La Coordinación somete la planificación a consideración de la Comisión de Carrera para su aprobación.'),
+ ('2. Ingreso por Quipux a Coordinación','El docente remite a Coordinación la planificación **Anexo B**, el compromiso estudiantil **Anexo C** y la carta de solicitud, aceptación o invitación de la empresa. La guía fija **21 días término posteriores al inicio del PAO** como fecha tope de presentación de la planificación.'),
+ ('3. Comisión de Carrera','La Coordinación pone en conocimiento la planificación a la Comisión de Carrera para su aprobación.'),
  ('4. Comisión Académica de Facultad','Después, Coordinación remite el expediente al Subdecanato para conocimiento y aprobación por la Comisión Académica de Facultad.'),
  ('5. Autorización del Decanato','La autorización final para ejecutar la gira corresponde al Decanato de Facultad, con base en el informe de la Comisión Académica. El flujo interno Subdecanato → Decanato se presenta como ruta operativa de Carrera.'),
  ('6. Notificación al docente','Con la autorización formal del Decanato, Coordinación comunica al docente el aval. Ningún correo o borrador sustituye la autorización.'),

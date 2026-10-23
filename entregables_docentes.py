@@ -13,14 +13,14 @@ ENTREGABLES=[
  ('Auxiliar de calificaciones','Docentes de nivelación y grado','Repositorio institucional de evidencias del personal académico → Otros Docencia','RRA, artículo 26',RRA,AUX),
  ('Rúbricas efectivamente utilizadas','Docentes que evalúan proyectos, trabajos, exposiciones o sustentaciones','Repositorio institucional de evidencias del personal académico → Otros Docencia; conforme calendario DEAC','Políticas 2026-2S, numerales 5.1–5.4',POL,RUB),
  ('Informe de estrategia didáctica innovadora','Profesor responsable de una clase espejo, PRISMA, COIL o Team Teaching','Repositorio institucional → Otros Docencia; Coordinación consolida y remite al DDA','Políticas 2026-2S, numeral 11; Métodos y Estrategias, numeral 6.1',POL,MET),
- ('Socialización del Modelo Educativo: tutores PAO','Tutores académicos PAO/paralelo','Evidencia a Coordinación de Carrera; consolidado al DDA al cierre del período','Políticas 2026-2S, numeral 6',POL,TUT),
+ ('Socialización del Modelo Educativo: tutores PAO','Tutores académicos PAO/paralelo','Evidencia a Coordinación de Carrera; consolidado al DDA al cierre del período','Políticas 2026-2S, numeral 6',POL,SOC),
  ('Socialización del Modelo Educativo: Comunicación Oral y Escrita','Docente(s) de Comunicación Oral y Escrita','Evidencia a Coordinación de Carrera; consolidado al DDA al cierre del período','Políticas 2026-2S, numeral 6',POL,SOC),
  ('Instrumentos académicos legalizados','Docentes según su actividad y asignación','Instrumentos académicos institucionales y evidencia del primer informe mensual; no equivale a carga indiscriminada en Otros Docencia','Políticas 2026-2S, numeral 13',POL,''),
  ('Guía de laboratorio, talleres y simulación','Docentes con componente práctico experimental','Legalización institucional antes de su ejecución; seguimiento y reporte a Coordinación según planificación','Políticas 2026-2S, numeral 13, instrumento 5',POL,LAB),
  ('Informe diagnóstico académico','Docentes según la planificación académica','Instrumentos académicos y seguimiento de Carrera','Políticas 2026-2S, numeral 13, instrumento 4',POL,''),
  ('Registros de tutoría y acompañamiento','Tutores y directores de titulación según designación','YANKAY / instrumento o formato institucional aplicable; seguimiento de Carrera','Políticas 2026-2S, numeral 13, instrumento 7 y segunda disposición general',POL,''),
  ('Evidencias de resultados de aprendizaje','Docentes y unidades responsables, según actividad','Archivo académico-administrativo de Carrera; incluye rúbricas, informes de RA, prácticas, titulación y auxiliares según corresponda','Políticas 2026-2S, numeral 12.1',POL,''),
- ('Resultados de sostenibilidad asociados a proyectos','Docentes responsables de actividades de sostenibilidad vinculadas a proyectos aprobados','Reporte al DDA cada dos períodos académicos, cuando aplica','Políticas 2026-2S, numeral 9.2',POL,''),
+ ('Obligaciones de resultados de sostenibilidad','Docente de la asignatura Sostenibilidad Ambiental; reporte especial para actividades vinculadas a proyectos aprobados','Reporte al DDA cada dos períodos académicos, cuando aplica','Políticas 2026-2S, numerales 9, 9.1 y 9.2',POL,''),
 ]
 RESUMEN=(
  'El **artículo 26 del Reglamento de Régimen Académico** exige que el docente de nivelación y grado suba el auxiliar de calificaciones del período a **Otros Docencia**. '

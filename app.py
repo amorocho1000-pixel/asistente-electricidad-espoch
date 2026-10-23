@@ -83,7 +83,8 @@ with t2:
     with st.expander(f'{codigo} — {titulo} | {responsable}'):
      st.write('Evidencia mínima: '+evidencia)
      if formato and formato in FORMATOS_CC:st.markdown(f'[Abrir formato: {formato}]({FORMATOS_CC[formato]})')
-     else:st.caption('No se ha cotejado un formato individual específico para esta evidencia.')
+     elif codigo=='A11':st.info('La CEACC elabora el informe y lo remite al Subdecanato para envío a la DEAC con el formato institucional.')
+     else:st.caption('Consultar la planificación y los respaldos que correspondan a esta actividad.')
    st.caption('La planificación distingue evidencias programadas de entregas y aprobaciones efectivas.')
  else:
   proc=st.selectbox('Proceso',['Giras de observación y visitas de campo','Estrategias metodológicas innovadoras','Prácticas de laboratorio'])
@@ -131,6 +132,7 @@ with t2:
      ('Documento de Comisión de Carrera — Designación de guías de laboratorio 2026-2S', 'https://drive.google.com/file/d/18BwlIbW-QzrOGxnBCFvpNKfOMZu0EWIJ/view'),
      ('Declaración de prácticas formativas de Electricidad 2026 — documento PDF', 'https://drive.google.com/file/d/1_UhtnMSMfSS7zc8AXL4F_logEPVI5eVW/view'),
      ('Formato de seguimiento de prácticas de laboratorio (Word)', 'https://docs.google.com/document/d/1rr06IWfUa_wDHKhzoieZM0yxmAcnlhZM/edit'),
+     ('Formato de informe consolidado de prácticas de laboratorio — Coordinación de Carrera', 'https://docs.google.com/document/d/1eKmTHiExdmHl_UtoC-ryXts_gvKMUyfM/edit'),
     ])
 with t3:
  st.header('Consultas sobre reglamentos y procedimientos')
