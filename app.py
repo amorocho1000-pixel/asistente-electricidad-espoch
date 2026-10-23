@@ -42,7 +42,7 @@ st.write('Trámites, formatos y procedimientos de la Carrera de Electricidad')
 t1,t2,t3,t4=st.tabs(['Estudiantes','Docentes','Consultas normativas','Privacidad'])
 with t1:
  st.header('Servicios estudiantiles')
- categoria=st.selectbox('Seleccione el proceso',['Justificación de inasistencias','Prácticas preprofesionales','Ayudantía de docencia','Titulación','Convalidaciones y homologaciones','Otras solicitudes'])
+ categoria=st.selectbox('Seleccione el proceso',['Justificación de inasistencias','Prácticas preprofesionales','Ayudantía de docencia','Titulación','Convalidaciones y homologaciones','Todas las solicitudes'])
  if categoria=='Justificación de inasistencias':
   st.subheader('Justificación de inasistencias')
   st.write('Seleccione el modelo adecuado a la duración o naturaleza de la inasistencia. Complete el documento y adjunte los respaldos requeridos por la normativa aplicable; la descarga no equivale a su presentación ni aprobación.')
@@ -72,16 +72,40 @@ with t1:
   st.subheader('Titulación')
   st.markdown('#### Cronograma vigente de titulación PAO8–PAO9 · 2026-2S')
   ficha_documento('Cronograma de Titulación PAO8–PAO9 · 2026-2S (PDF)',CRONOGRAMA_TITULACION)
-  enlaces(ESTUDIANTES['Titulación'])
+  # El cronograma ya está publicado arriba. Las otras dos solicitudes
+  # pertenecen al catálogo general, no al proceso de titulación.
+  excluir_titulacion = (
+   'cronograma de titulacion',
+   'evaluacion de medios tecnologicos',
+   'habilitacion de matricula pendiente',
+  )
+  vistos_titulacion = {CRONOGRAMA_TITULACION}
+  documentos_titulacion = []
+  for nombre, url in ESTUDIANTES['Titulación']:
+   if any(texto in clean(nombre) for texto in excluir_titulacion):
+    continue
+   if url not in vistos_titulacion:
+    documentos_titulacion.append((nombre, url))
+    vistos_titulacion.add(url)
+  enlaces(documentos_titulacion)
   st.markdown('#### Solicitudes correspondientes al proceso')
-  enlaces([(n,u) for n,u in SOLICITUDES if any(k in n for k in ['Titulacion','Sustentacion','Complexivo','Medios_Tecnologicos'])])
+  solicitudes_titulacion = []
+  for nombre, url in SOLICITUDES:
+   if not any(texto in clean(nombre) for texto in ('titulacion', 'sustentacion', 'complexivo')):
+    continue
+   if any(texto in clean(nombre) for texto in excluir_titulacion):
+    continue
+   if url not in vistos_titulacion:
+    solicitudes_titulacion.append((nombre, url))
+    vistos_titulacion.add(url)
+  enlaces(solicitudes_titulacion)
  elif categoria=='Convalidaciones y homologaciones':
   st.subheader('Convalidaciones y homologaciones')
   st.write(EXPLICACIONES['convalidacion'])
   enlaces([(n,u) for n,u in SOLICITUDES if 'Homologacion' in n])
   st.markdown(f'[Reglamento de Régimen Académico — Resolución 450.CP.2026]({NORMAS["rra"][1]})')
  else:
-  st.subheader('Catálogo de solicitudes estudiantiles')
+  st.subheader('Todas las solicitudes estudiantiles')
   enlaces(SOLICITUDES)
 with t2:
  st.header('Gestión académica docente')
