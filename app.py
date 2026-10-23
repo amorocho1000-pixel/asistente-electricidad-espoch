@@ -88,12 +88,9 @@ with t2:
  modulo=st.radio('Apartado',['Comisiones académicas','Procesos del docente'],horizontal=True)
  if modulo=='Comisiones académicas':
   com=st.selectbox('Comisión',list(C));enlaces([(n,u) for n,u in C[com] if not (com=='Comisión de Carrera' and n=='Acta de Comisión de Carrera')])
-  if com=='Comisión de Titulación':
-   ficha_documento('Cronograma de Titulación PAO8–PAO9 · 2026-2S (PDF)',CRONOGRAMA_TITULACION)
   if com=='Comisión de Carrera':
    st.subheader('Evidencias de la planificación por responsable')
    ficha_documento('Planificación académica y de gestión 2026-2S (PDF)', PLANIFICACION_2026_PDF)
-   st.markdown(f'[Planificación articulada — documento de trabajo]({PLANIFICACION_CC_URL})')
    rol=st.selectbox('Responsable',list(ROLES_CC));cod=ROLES_CC[rol]
    found=[t for t in TAREAS_CC if not cod or cod.lower() in t[2].lower()]
    for codigo,titulo,responsable,evidencia,formato in found:
